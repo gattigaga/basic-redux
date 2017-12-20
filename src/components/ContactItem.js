@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import "../assets/css/ContactItem.css";
+
 const ContactItem = ({ name, phone, onClickDelete }) => (
   <div className="ContactItem">
     <p className="ContactItem__name">{name}</p>

@@ -3,8 +3,8 @@ import { connect } from "react-redux";
 
 import ContactList from "./components/ContactList";
 import ContactItem from "./components/ContactItem";
-
 import { addContact, removeContact } from "./states/actions";
+import "./assets/css/App.css";
 
 class App extends Component {
   constructor(props) {
@@ -22,17 +22,21 @@ class App extends Component {
 
     return (
       <div className="App">
-        <div>
+        <div className="App__form">
           <input
             type="text"
             value={name}
             onChange={event => this.setState({ name: event.target.value })}
+            className="App__input"
+            placeholder="Name"
           />
           <br />
           <input
             type="text"
             value={phone}
             onChange={event => this.setState({ phone: event.target.value })}
+            className="App__input"
+            placeholder="Phone"
           />
           <br />
           <button
@@ -41,6 +45,7 @@ class App extends Component {
               this.setState({ name: "", phone: "" });
               addNewContact({ name, phone });
             }}
+            className="App__button"
           >
             Add New Contact
           </button>
