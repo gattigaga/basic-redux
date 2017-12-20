@@ -7,15 +7,15 @@ export function addContact(contact) {
 
   return {
     type: "ADD_CONTACT",
-    contactID: currentID,
+    id: currentID,
     name,
     phone
   };
 }
 
-export function removeContact(contactID) {
+export function removeContact(id) {
   return {
     type: "REMOVE_CONTACT",
-    contactID
+    id
   };
 }

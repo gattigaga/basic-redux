@@ -7,14 +7,14 @@ function contacts(state = [], action) {
       return [
         ...state,
         {
-          contactID: action.contactID,
+          id: action.id,
           name: action.name,
           phone: action.phone
         }
       ];
     case "REMOVE_CONTACT":
       // Removing a contact from the list
-      return state.filter(contact => contact.id !== action.contactID);
+      return state.filter(contact => contact.id !== action.id);
     default:
       return state;
   }
