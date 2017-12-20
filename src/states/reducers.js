@@ -3,22 +3,18 @@ import { combineReducers } from "redux";
 function contacts(state = [], action) {
   switch (action.type) {
     case "ADD_CONTACT":
-      const { contactID, name, phone } = action;
-
       // Adding new contact to the list
       return [
         ...state,
         {
-          contactID,
-          name,
-          phone
+          contactID: action.contactID,
+          name: action.name,
+          phone: action.phone
         }
       ];
     case "REMOVE_CONTACT":
-      const { contactID } = action;
-
       // Removing a contact from the list
-      return state.filter(contact => contact.id !== contactID);
+      return state.filter(contact => contact.id !== action.contactID);
     default:
       return state;
   }

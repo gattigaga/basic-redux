@@ -1,9 +1,13 @@
+// Initial ID of contact
+let currentID = 0;
+
 export function addContact(contact) {
-  const { contactID, name, phone } = contact;
+  const { name, phone } = contact;
+  currentID += 1;
 
   return {
     type: "ADD_CONTACT",
-    contactID,
+    contactID: currentID,
     name,
     phone
   };
