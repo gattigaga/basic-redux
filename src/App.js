@@ -42,6 +42,11 @@ class App extends Component {
           <button
             type="button"
             onClick={() => {
+              if (!name || !phone) {
+                alert("Field cannot be empty !");
+                return;
+              }
+
               this.setState({ name: "", phone: "" });
               addNewContact({ name, phone });
             }}
