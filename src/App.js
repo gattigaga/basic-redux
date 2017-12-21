@@ -18,6 +18,7 @@ class App extends Component {
 
   render() {
     const { name, phone } = this.state;
+    // The state from store passed as props
     const { contacts, addNewContact, removeExistingContact } = this.props;
 
     return (
@@ -72,11 +73,13 @@ class App extends Component {
   }
 }
 
+// Get your state and passing to your App component as props
 const mapStateToProps = ({ contacts }) => ({
   contacts
 });
 
-const mapDispathToProps = dispatch => ({
+// Create functionality which need to use dispatch
+const mapDispatchToProps = dispatch => ({
   addNewContact: contact => {
     dispatch(addContact(contact));
   },
@@ -85,4 +88,4 @@ const mapDispathToProps = dispatch => ({
   }
 });
 
-export default connect(mapStateToProps, mapDispathToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
